@@ -8,6 +8,10 @@ import IconTreasure from '../assets/images/icons/ic_treasure.svg';
 
 import Button from '../elements/Button';
 
+import "../assets/scss/style.scss";
+
+import formatNumber from "../utils/formatNumber";
+
 export default function Hero(props) {
     function showMostPicked(){
         window.scrollTo({
@@ -15,6 +19,7 @@ export default function Hero(props) {
             behavior: "smooth",
         });
     }
+
     return (
         <section className="container pt-4">
             <div className="row align-items-center">
@@ -38,7 +43,7 @@ export default function Hero(props) {
                         Show Me Now
                     </Button>
 
-                    <div className="row mt-5">
+                    <div className="row" style={{marginTop: 80}}>
                         <div className="col-auto" style={{ marginRight: 35 }}>
                             <img
                                 width="36"
@@ -46,7 +51,7 @@ export default function Hero(props) {
                                 src={IconTraveler} 
                                 alt={`${props.data.travelers} Travelers`}/>
                             <h6 className="mt-3">
-                                {props.data.travelers} {" "}
+                                {formatNumber(props.data.travelers)} {" "}
                                 <span className="text-gray-500 font-weight-light">
                                     Travelers
                                 </span>
@@ -59,7 +64,7 @@ export default function Hero(props) {
                                 src={IconTreasure} 
                                 alt={`${props.data.treasures} Treasures`}/>
                             <h6 className="mt-3">
-                                {props.data.treasures} {" "}
+                                {formatNumber(props.data.treasures)} {" "}
                                 <span className="text-gray-500 font-weight-light">
                                     Treasures
                                 </span>
@@ -72,7 +77,7 @@ export default function Hero(props) {
                                 src={IconCities} 
                                 alt={`${props.data.cities} Cities`}/>
                             <h6 className="mt-3">
-                                {props.data.cities}{" "} 
+                                {formatNumber(props.data.cities)}{" "} 
                                 <span className="text-gray-500 font-weight-light">
                                     Cities
                                 </span>
